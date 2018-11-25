@@ -1,0 +1,16 @@
+
+
+import os
+import shutil
+import pathlib
+
+path = pathlib.Path('.DS_Store')
+os.remove(path) # 削除
+
+path_from = pathlib.Path('.bash_history')
+path_to = pathlib.Path('/tmp/.bash_history')
+os.rename(path_from, path_to) # 移動（名前変更）
+
+path_from = pathlib.Path('.bash_history')
+path_to = pathlib.Path('/tmp/.bash_history')
+shutil.copy2(path_from, path_to) # 移動（名前変更）

@@ -1,0 +1,14 @@
+
+
+import pathlib
+path = pathlib.Path('foo.txt')
+
+with open(path, 'r', encoding="utf-8") as f:
+    for line in f:
+        # line を処理
+
+with open(path, 'w', encoding="utf-8") as f:
+    print("内容", file=f)
+
+with path.open('r') as f: # Pathのメソッドを使って開くこともできる。
+    # ...

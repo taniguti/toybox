@@ -1,0 +1,6 @@
+#https://www.m3tech.blog/entry/python-snippets#標準出力標準エラー出力
+
+print("HELLO") # 標準出力にメッセージ
+
+import sys
+print("ERROR!", file=sys.stderr) # 標準エラーにメッセージ

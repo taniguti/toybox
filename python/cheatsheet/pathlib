@@ -1,0 +1,16 @@
+# https://www.m3tech.blog/entry/python-snippets
+
+import pathlib
+
+p = pathlib.Path("/foo/bar/baz.txt") # 文字列をPathでラップ。実際にはPathではなく、OS毎のサブクラスでラップされる
+p.name   # => baz.txt ファイル名
+p.parent # => PosixPath('/foo/bar') 親ディレクトリパス
+
+dirpath = pathlib.Path("/foo/bar/")
+fullpath = dirpath / "baz.txt" # => PosixPath('/foo/bar/baz.txt') パスの連結
+
+
+bad = pathlib.Path("~/Donwloads/report.txt") # ~ は自動展開されない！
+
+f = pathlib.Path("~/Donwloads/report.txt").expanduser()
+g = pathlib.Path("${WORK_DIR}/input.txt").expandvars()

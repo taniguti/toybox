@@ -1,2 +1,2 @@
 # toybox
-sample, test, prototype
+sample, test, prototype, cheat sheet
