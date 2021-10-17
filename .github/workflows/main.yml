@@ -4,11 +4,11 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+# Allows you to run this workflow manually from the Actions tab
+#  workflow_dispatch:
 
 jobs:
   build:
@@ -16,6 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set env
         run: cat ./conf/env.rc >> $GITHUB_ENV
       - name: Run a one-line script
@@ -26,3 +27,17 @@ jobs:
         run: |
           echo Add other actions to build, $GHACTION_ENV_TEST2
           echo test, and deploy your project. $GHACTION_ENV_TEST3
+
+      - name: Checkout vmware_fusion_helper
+        uses: actions/checkout@v2
+        with:
+          repositoy: taniguti/vmware_fusion_helper
+          path: vmware_fusion_helper
+
+      - name: Check file list of vmware_fusion_helper
+        run: |
+          echo current dir
+          pwd
+          ls -aFC
+          echo check vmware_fusion_helper
+          ls -aFC./vmware_fusion_helper
