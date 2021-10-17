@@ -34,8 +34,8 @@ jobs:
       - name: Checkout vmware_fusion_helper
         uses: actions/checkout@v2
         with:
-          repository: taniguti/vmware_fusion_helper
-          path: vmware_fusion_helper
+          repository: taniguti/jamfapi-toos
+          path: jamf
 
       - name: Check file list of vmware_fusion_helper
         run: |
@@ -43,4 +43,4 @@ jobs:
           pwd
           ls -aFC
           echo check vmware_fusion_helper
-          ls -aFC ./vmware_fusion_helper
+          ls -aFC ./jamf
