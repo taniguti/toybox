@@ -20,7 +20,7 @@ jobs:
           path: toybox-master
 
       - name: Set env
-        run: cat ./toybox/conf/env.rc >> $GITHUB_ENV
+        run: cat ./toybox-master/conf/env.rc >> $GITHUB_ENV
 
       - name: Run a one-line script
         run: echo Hello, world! $GHACTION_ENV_TEST1
