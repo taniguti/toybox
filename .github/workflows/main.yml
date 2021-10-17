@@ -34,7 +34,7 @@ jobs:
       - name: Checkout vmware_fusion_helper
         uses: actions/checkout@v2
         with:
-          repositoy: taniguti/vmware_fusion_helper
+          repository: taniguti/vmware_fusion_helper
           path: vmware_fusion_helper
 
       - name: Check file list of vmware_fusion_helper
