@@ -31,16 +31,15 @@ jobs:
           echo Add other actions to build, $GHACTION_ENV_TEST2
           echo test, and deploy your project. $GHACTION_ENV_TEST3
 
-      - name: Checkout vmware_fusion_helper
+      - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: taniguti/jamfapi-toos
+          repository: taniguti/jamfapi-tools
           path: jamf
 
-      - name: Check file list of vmware_fusion_helper
+      - name: Check file list
         run: |
           echo current dir
           pwd
           ls -aFC
-          echo check vmware_fusion_helper
           ls -aFC ./jamf
