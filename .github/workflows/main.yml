@@ -16,9 +16,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+          path: toybox-master
 
       - name: Set env
-        run: cat ./conf/env.rc >> $GITHUB_ENV
+        run: cat ./toybox/conf/env.rc >> $GITHUB_ENV
+
       - name: Run a one-line script
         run: echo Hello, world! $GHACTION_ENV_TEST1
 
@@ -40,4 +42,4 @@ jobs:
           pwd
           ls -aFC
           echo check vmware_fusion_helper
-          ls -aFC./vmware_fusion_helper
+          ls -aFC ./vmware_fusion_helper
