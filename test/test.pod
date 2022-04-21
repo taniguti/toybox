@@ -1,1 +1,44 @@
-:q!
+=encoding utf8
+
+=head1 NAME
+
+B<dist-infra, dist-project, dist-file, dist-system> - file-distributing tool
+
+=head1 SYNOPSIS
+
+B<dist-XXX> [-x] [other options]
+
+B<dist-XXX> B<-h> | B<--help> | B<-?>
+
+You can get detailed usage by dist-XXX -h.
+
+=head1 DESCRIPTION
+
+dist-infra, dist-project, dist-file, dist-system are file-distributing tool.
+
+=head1 OPTIONS
+
+You can get detailed usage by dist-XXX -h.
+
+=head1 SEE ALSO
+
+L<https://wiki.dena.jp/display/MBGAINFRA/Introduction+of+Global+Infra#IntroductionofGlobalInfra-distributefiles>,
+L<https://wiki.dena.jp/display/MBGAINFRA/Global+Infra+Documents+For+Developers#GlobalInfraDocumentsForDevelopers-ファイルを撒く方法>
+
+=head1 AUTHOR
+
+HIROSE Masaaki E<lt>masaaki.hirose@dena.comE<gt>
+
+=head1 MEMO: Dist source directory
+
+    Target_Projectの値
+      -p オプション || DENA_PROJECT || (is_shared_user ? "" : USER_NAME)
+
+    is_shared_user Target_Project  dist dir
+    =====================================================
+    true           ある            ~/Target_Project/
+    true           ない            エラー
+    -----------------------------------------------------
+    false          あるTP==USER    ~/
+    false          あるTP!=USER    ~/Target_Project/
+    false          ない            ~/
